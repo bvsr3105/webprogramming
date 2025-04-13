@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>23BCE1537</title>
+</head>
+<body>
+<button onclick="myFunction()">Show table</button>
+<input type="text" id="search" placeholder="Search for P-Id">
+<button onclick="search()">Search</button>
+<button onclick="sort()">Sort</button>
+<input type="text" id="min" placeholder="Min">
+<input type="text" id="max" placeholder="Max">
+<button onclick="filter()">Filter</button>
+</body>
+<script>
+function myFunction() {
+let table = document.createElement("table");
+table.border = "1";
+table.id = "table"
+table.cellPadding = "10px";
+let row = table.insertRow(0)
+SOLUTION - 1
+let header1 = row.insertCell(0);
+let header2 = row.insertCell(1);
+let header3 = row.insertCell(2);
+header1.innerHTML = "P-Id";
+header2.innerHTML = "Name";
+header3.innerHTML = "Age";
+document.body.appendChild(table);
+for(let i=1;i<9;i++){
+let drow = table.insertRow(i);
+let cell1 = drow.insertCell(0);
+let cell2 = drow.insertCell(1);
+let cell3 = drow.insertCell(2);
+cell1.innerHTML = i;
+switch(i){
+case 1:
+cell2.innerHTML = "Alen";
+cell3.innerHTML = "39";
+break;
+case 2:
+cell2.innerHTML = "Deena";
+cell3.innerHTML = "47";
+break;
+case 3:
+cell2.innerHTML = "Diana";
+cell3.innerHTML = "21";
+break;
+case 4:
+cell2.innerHTML = "Jack";
+cell3.innerHTML = "54";
+break;
+case 5:
+cell2.innerHTML = "Jain";
+cell3.innerHTML = "23";
+break;
+case 6:
+cell2.innerHTML = "Kelvin";
+cell3.innerHTML = "61";
+break;
+case 7:
+cell2.innerHTML = "Louis";
+cell3.innerHTML = "69";
+break;
+case 8:
+cell2.innerHTML = "Rex";
+cell3.innerHTML = "49";
+break;
+}
+}
+}
+function search(){
+let table = document.getElementById("table");
+let rows = table.rows;
+let search = document.getElementById("search").value;
+for(let i=1;i<rows.length;i++){
+let cells = rows[i].cells;
+if(cells[0].innerHTML == search){
+cells[0].style.backgroundColor = "yellow";
+cells[1].style.backgroundColor = "yellow";
+cells[2].style.backgroundColor = "yellow";
+}
+}
+}
+function sort(){
+let table = document.getElementById("table");
+let rows = table.rows;
+for(let i=rows.length-1;i>0;i--){
+for(let j=1;j<i;j++){
+if(rows[j].cells[2].innerHTML < rows[j+1].cells[2].innerHTML){
+let temp = rows[j].innerHTML;
+rows[j].innerHTML = rows[j+1].innerHTML;
+rows[j+1].innerHTML = temp;
+}
+}
+}
+document.body.appendChild(table);
+}
+function filter(){
+let table = document.getElementById("table");
+let min = parseInt(document.getElementById("min").value);
+let max = parseInt(document.getElementById("max").value);
+let rows = table.rows;
+for(let i=1;i<rows.length;i++){
+let age = parseInt(rows[i].cells[2].innerHTML);
+if(age < min || age > max){
+OUTPUT -1
+rows[i].style.display = "none";
+}
+}
+document.body.appendChild(table);
+}
+</script>
+</html>

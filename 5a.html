@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Resume</title>
+<style>
+body {
+display: grid;
+grid-template-rows: auto 1fr auto;
+grid-template-columns: 200px 1fr 200px;
+grid-template-areas:
+"header header header"
+"nav main aside"
+"footer footer footer";
+gap: 10px;
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+}
+header {
+grid-area: header;
+background: #4CAF50;
+color: white;
+text-align: center;
+padding: 10px;
+}
+nav {
+grid-area: nav;
+background: #f4f4f4;
+padding: 10px;
+}
+main {
+grid-area: main;
+padding: 10px;
+}
+aside {
+grid-area: aside;
+background: #f4f4f4;
+padding: 10px;
+}
+footer {
+grid-area: footer;
+background: #4CAF50;
+color: white;
+text-align: center;
+padding: 10px;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Saketh</h1>
+<p>Professional Title</p>
+</header>
+<nav>
+<ul>
+<li><a href="#about">About Me</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#media">Media</a></li>
+</ul>
+</nav>
+<main>
+<section id="about">
+<h2>About Me</h2>
+<p>Hello! My name is Saketh, and I am currently a student at VIT with a
+major in CSE(core). I am an aspiring entrepreneur, passionate about new
+technologies. I believe in continuous learning and strive to excel in every
+endeavor I undertake..</p>
+</section>
+<section id="education">
+<h2>Education</h2>
+<article>
+<h3>Bachelor of Technology in Compyter Science</h3>
+<p>Vellore institute of technology, 2027</p>
+</article>
+</section>
+<section id="experience">
+<h2>Experience</h2>
+<article>
+<h3>software Enginner</h3>
+<p>ABC cooperation, 2023</p>
+<p>Development and managment.</p>
+</article>
+</section>
+<section id="skills">
+<h2>Skills</h2>
+<article>
+<h3>Technical Skills</h3>
+<progress value="80" max="100"></progress> HTML<br>
+<progress value="70" max="100"></progress> CSS<br>
+<progress value="90" max="100"></progress> JavaScript<br>
+</article>
+</section>
+<section id="media">
+<h2>Media</h2>
+<figure>
+<img src="myjpg.jpg" alt="Profile Photo">
+<figcaption>Profile Photo</figcaption>
+</figure>
+</section>
+</main>
+<footer>
+<p>Contact Details: venkata.saketh2023@vitstudent.ac.in, 9791199889,
+etc.</p>
+<p>Social Media Links</p>
+</footer>
+</body>
+</html>

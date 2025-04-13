@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic JavaScript Elements</title>
+</head>
+<body>
+<script>
+let table = document.createElement("table");
+for (let i = 0; i < 3; i++) {
+let row = document.createElement("tr");
+for (let j = 0; j < 3; j++) {
+let cell = document.createElement("td");
+cell.innerText = `Row ${i + 1} Col ${j + 1}`;
+row.appendChild(cell);
+}
+table.appendChild(row);
+}
+document.body.appendChild(table);
+let button = document.createElement("button");
+button.innerText = "Hover over me";
+button.style.backgroundColor = "red";
+button.onmouseover = function () {
+this.style.backgroundColor = "green";
+};
+document.body.appendChild(button);
+let textbox = document.createElement("input");
+textbox.type = "text";
+textbox.placeholder = "Focus on me";
+textbox.style.backgroundColor = "green";
+textbox.onfocus = function () {
+this.style.backgroundColor = "yellow";
+};
+textbox.onchange = function () {
+alert("Hello! You changed the text.");
+};
+document.body.appendChild(textbox);
+let inputField = document.createElement("input");
+inputField.type = "text";
+let addButton = document.createElement("button");
+addButton.innerText = "Double-click to add";
+let ul = document.createElement("ul");
+addButton.ondblclick = function () {
+let li = document.createElement("li");
+li.innerText = inputField.value;
+ul.appendChild(li);
+inputField.value = "";
+};
+document.body.appendChild(inputField);
+document.body.appendChild(addButton);
+document.body.appendChild(ul);
+let keyPressInputField = document.createElement("input");
+keyPressInputField.type = "text";
+let keyPressCounterInputField = document.createElement("input");
+keyPressCounterInputField.type = "text";
+keyPressCounterInputField.readOnly = true;
+let keyPressCount = 0;
+keyPressInputField.onkeypress = function () {
+keyPressCounterInputField.value = ++keyPressCount;
+};
+document.body.appendChild(keyPressInputField);
+document.body.appendChild(keyPressCounterInputField);
+</script>
+</body>
+</html>

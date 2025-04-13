@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Design</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+}
+.form-container {
+width: 300px;
+margin: 20px auto;
+border: 1px solid #000;
+padding: 15px;
+}
+.form-group {
+margin-bottom: 10px;
+}
+label {
+display: block;
+font-weight: bold;
+margin-bottom: 5px;
+}
+input[type="text"], input[type="password"], select, textarea {
+width: 100%;
+padding: 5px;
+margin-bottom: 10px;
+box-sizing: border-box;
+}
+input[type="radio"], input[type="checkbox"] {
+margin-right: 5px;
+}
+.form-buttons {
+display: flex;
+justify-content: space-between;
+}
+</style>
+</head>
+<body>
+<div class="form-container">
+<h2>Login</h2>
+<form>
+<div class="form-group">
+<label for="username">Username*</label>
+<input type="text" id="username" name="username" required>
+</div>
+<div class="form-group">
+<label for="password">Password*</label>
+<input type="password" id="password" name="password" required>
+</div>
+<div class="form-group">
+<label>Gender*</label>
+<input type="radio" id="male" name="gender" value="Male" required>
+<label for="male">Male</label>
+<input type="radio" id="female" name="gender" value="Female"
+required>
+<label for="female">Female</label>
+</div>
+<div class="form-group">
+<label>Programming Skill</label>
+<input type="checkbox" id="java" name="skill" value="Java">
+<label for="java">Java</label>
+<input type="checkbox" id="cpp" name="skill" value="C++">
+<label for="cpp">C++</label>
+<input type="checkbox" id="csharp" name="skill" value="C#">
+<label for="csharp">C#</label>
+</div>
+<div class="form-group">
+<label for="fruit">Fruit</label>
+<select id="fruit" name="fruit">
+<optgroup label="Pome">
+<option value="apples">Apples</option>
+<option value="pears">Pears</option>
+</optgroup>
+<optgroup label="Citrus">
+<option value="oranges">Oranges</option>
+<option value="grapefruits">Grapefruits</option>
+<option value="mandarins">Mandarins</option>
+<option value="limes">Limes</option>
+</optgroup>
+<optgroup label="Stone">
+<option value="nectarines">Nectarines</option>
+<option value="apricots">Apricots</option>
+<option value="peaches">Peaches</option>
+<option value="plums">Plums</option>
+</optgroup>
+<optgroup label="Exotic">
+<option value="bananas">Bananas</option>
+<option value="mangoes">Mangoes</option>
+</optgroup>
+<optgroup label="Berries">
+<option value="strawberries">Strawberries</option>
+<option value="raspberries">Raspberries</option>
+<option value="blueberries">Blueberries</option>
+<option value="kiwifruit">Kiwifruit</option>
+<option value="passionfruit">Passionfruit</option>
+</optgroup>
+<optgroup label="Melons">
+<option value="watermelons">Watermelons</option>
+<option value="rockmelons">Rock-melons</option>
+<option value="honeydew">Honeydew melons</option>
+</optgroup>
+</select>
+</div>
+<div class="form-group">
+<textarea name="comment" rows="4" placeholder="Enter your
+comment here"></textarea>
+</div>
+<div class="form-buttons">
+<button type="submit">SEND</button>
+<button type="reset">RESET</button>
+</div>
+</form>
+</div>
+</body>
+</html>

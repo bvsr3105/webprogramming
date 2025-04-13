@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Feedback</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+}
+.form-container {
+max-width: 400px;
+margin: auto;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 10px;
+}
+.form-group {
+margin-bottom: 20px;
+}
+label {
+display: block;
+margin-bottom: 5px;
+font-weight: bold;
+}
+input[type="range"] {
+width: 100%;
+}
+.total {
+font-size: 18px;
+font-weight: bold;
+margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<div class="form-container">
+<h2>Product Feedback</h2>
+<form>
+<div class="form-group">
+<label for="quality">Quality (0-10):</label>
+<input type="range" id="quality" name="quality" min="0" max="10"
+value="5" oninput="calculateTotal()">
+<output id="qualityValue">5</output>
+</div>
+<div class="form-group">
+<label for="value">Value for Money (0-10):</label>
+<input type="range" id="value" name="value" min="0" max="10"
+value="5" oninput="calculateTotal()">
+<output id="valueValue">5</output>
+</div>
+<div class="form-group">
+<label for="usability">Usability (0-10):</label>
+<input type="range" id="usability" name="usability" min="0" max="10"
+value="5" oninput="calculateTotal()">
+<output id="usabilityValue">5</output>
+</div>
+<div class="total">
+Total Score: <output id="totalValue">15</output>
+</div>
+</form>
+</div>
+<script>
+function calculateTotal() {
+const quality = parseInt(document.getElementById('quality').value);
+const value = parseInt(document.getElementById('value').value);
+const usability = parseInt(document.getElementById('usability').value);
+document.getElementById('qualityValue').textContent = quality;
+document.getElementById('valueValue').textContent = value;
+document.getElementById('usabilityValue').textContent = usability;
+const total = quality + value + usability;
+document.getElementById('totalValue').textContent = total;
+}
+</script>
+</body>
+</html>
